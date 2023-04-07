@@ -1,33 +1,33 @@
-const TTL_TWRS = 3;
-const WD_TWR = `${30 * TTL_TWRS}px`;
-const HT_HD = "8rem";
-const HT_FT = "2rem";
-const HT_HAN = `(100vh - ${HT_HD} - ${HT_FT})`;
-const HT_TWR = `(${WD_TWR} * ${TTL_TWRS}) * 1.3`;
-const HT_TILE = `(${HT_TWR} / 12)`;
+const NUM_TILES = 3;
+const TOWER_WIDTH = `${30 * NUM_TILES}px`;
+const HEADER_HEIGHT = "8rem";
+const FOOTER_HEIGHT = "2rem";
+const HANOI_HEIGHT = `(100vh - ${HEADER_HEIGHT} - ${FOOTER_HEIGHT})`;
+const TOWER_HEIGHT = `(${TOWER_WIDTH} * ${NUM_TILES}) * 1.3`;
+const TILE_HEIGHT = `(${TOWER_HEIGHT} / 12)`;
 
 const getWidth = () => {
-    switch (TTL_TWRS) {
-        case 1:
-            return 13;
-        case 2:
-            return 10.5;
-        case 3:
-            return 8;
-        default:
-            return 3;
-    }
+  switch (NUM_TILES) {
+    case 1:
+      return 13;
+    case 2:
+      return 10.5;
+    case 3:
+      return 8;
+    default:
+      return 3;
+  }
 };
 
-const WD_TILE_BS = getWidth;
+const TILE_WIDTH_BASE = getWidth();
 
 export default {
-    WD_TWR,
-    HT_HD,
-    HT_FT,
-    HT_HAN,
-    HT_TWR,
-    HT_TILE,
-    WD_TILE_BS,
-    TTL_TWRS
+  TOWER_WIDTH,
+  HEADER_HEIGHT,
+  FOOTER_HEIGHT,
+  HANOI_HEIGHT,
+  TOWER_HEIGHT,
+  TILE_HEIGHT,
+  TILE_WIDTH_BASE,
+  NUM_TILES,
 };
